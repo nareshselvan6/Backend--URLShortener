@@ -18,6 +18,7 @@ export const createurl = async (req, res) => {
         shortId: shortID,
         redirectURL: body.url,
         visitHistory: [],
+        createdtime:new Date().toISOString().split('T')[0]
       }
      );
 
@@ -73,3 +74,28 @@ export const visitcount = async (req, res) => {
     res.status(500).send("error occured while getting visitcount");
   }
 };
+
+export const totallinks=async(req,res)=>{
+  try {
+    const totallinks=await url.find()
+    res.status(200).json({totallinks})
+    
+  } catch (error) {
+    res.status(500).send("error while fetching the total links")
+  }
+}
+
+export const todaylinks=async(req,res)=>{
+  try {
+    const currentdate= new Date().toISOString().split('T')[0];
+    console.log(currentdate);
+
+    const todaylinks=await url.find({createdtime:currentdate})
+    console.log(todaylinks);
+    res.status(200).json({todaylinks})
+
+  } catch (error) {
+    res.status(500).send("error while fetching the today created links")
+
+  }
+}

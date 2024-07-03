@@ -12,6 +12,8 @@ const urlmod=new mongoose.Schema(
         },
     
      visitHistory:[{timestamp:{type:Number}}],
+     
+     createdtime:String
 },
 {timestamps:true}
 
