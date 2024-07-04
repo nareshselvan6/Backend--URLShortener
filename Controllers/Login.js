@@ -22,7 +22,8 @@ export const register=async(req,res)=>{
             isactive:false
         })
 
-        const generatedlink=`http://localhost:5173/activateaccount`
+        const generatedlink=`https://url-shortner-frontend-three-eta.vercel.app/activateaccount`
+        
       
         const info = await transporter.sendMail({
             from: process.env.PASS_EMAIL,
@@ -119,7 +120,7 @@ const assigntoken = await logincrediential.findOneAndUpdate(mail,token);
 
 // link gen,
 
-const generatedlink=`http://localhost:5173/reset-pswrd/${user.id}/${tokengen}`
+const generatedlink=`https://url-shortner-frontend-three-eta.vercel.app/reset-pswrd/${user.id}/${tokengen}`
 
 
 
