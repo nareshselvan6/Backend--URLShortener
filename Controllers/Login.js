@@ -22,7 +22,7 @@ export const register=async(req,res)=>{
             isactive:false
         })
 
-        const generatedlink=`https://url-shortner-frontend-three-eta.vercel.app/activateaccount`
+        const generatedlink=`https://url-shortner-frontend-three-eta.vercel.app/accountactivation`
         
       
         const info = await transporter.sendMail({
